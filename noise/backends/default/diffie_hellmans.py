@@ -1,9 +1,28 @@
-from cryptography.hazmat.primitives.asymmetric import x25519
+import abc
+
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.asymmetric import ec, x25519
 
 from noise.backends.default.crypto import X448
 from noise.backends.default.keypairs import KeyPair25519, KeyPair448
 from noise.exceptions import NoiseValueError
 from noise.functions.dh import DH
+
+cryptography_backend = default_backend()
+
+
+class CryptographyECDH(DH, metaclass=abc.ABCMeta):
+    @property
+    def dhlen(self):
+        return self.klass.curve.key_size
+
+    def generate_keypair(self) -> 'KeyPair':
+        private_key = ec.generate_private_key(self.klass.curve, cryptography_backend)
+        public_key = private_key.public_key()
+        return self.klass(private_key, public_key)
+
+    def dh(self, private_key, public_key) -> bytes:
+        return private_key.exchange(ec.ECDH(), public_key)
 
 
 class ED25519(DH):

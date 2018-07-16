@@ -6,6 +6,7 @@ Changelog
 0.3.0 - TODO
 ~~~~~~~~~~~~~~~~~~
 
+* Added support for secp256k1 curve in experimental backend
 * Added support for non-default crypto backends
 * Loosened restriction on Cryptography version in requirements.txt and bumped version to 2.2.2
 

@@ -1,3 +1,4 @@
+import abc
 import os
 import warnings
 
@@ -6,6 +7,23 @@ from cryptography.hazmat.primitives.asymmetric import x25519
 from noise.backends.default.crypto import X448
 from noise.exceptions import NoiseValueError
 from noise.functions.keypair import KeyPair
+
+
+class CryptographyKeyPair(KeyPair, metaclass=abc.ABCMeta):
+    @classmethod
+    def from_private_bytes(cls, private_bytes):
+        # TODO
+        pass
+
+    @classmethod
+    def from_public_bytes(cls, public_bytes):
+        # TODO
+        pass
+
+    @property
+    @abc.abstractmethod
+    def curve(self):
+        raise NotImplementedError
 
 
 class KeyPair25519(KeyPair):
