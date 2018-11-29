@@ -3,24 +3,18 @@ noiseprotocol
 [![Build Status](https://travis-ci.org/plizonczyk/noiseprotocol.svg?branch=master)](https://travis-ci.org/plizonczyk/noiseprotocol)
 [![PyPI](https://img.shields.io/pypi/v/noiseprotocol.svg)](https://pypi.python.org/pypi/noiseprotocol)
 [![Documentation Status](https://readthedocs.org/projects/noiseprotocol/badge/)](http://noiseprotocol.readthedocs.io/)
-[![AppVeyor Windows build status](https://ci.appveyor.com/api/projects/status/nta56n98cs7pbnpp?svg=true)](https://ci.appveyor.com/project/plizonczyk/noiseprotocol)
 
 This repository contains source code of **noiseprotocol** - a Python 3 implementation of [Noise Protocol Framework](http://www.noiseprotocol.org/).
 Compatible with revisions 32 and 33.
 
 Master branch contains latest version released. Trunk branch is an active development branch.
 
-### Warning
-This package shall not be used (yet) for production purposes. There was little to none peer review done so far. 
-Use common sense while using - until this package becomes stable.
-
 ## Documentation
 Available on [Read the Docs](https://noiseprotocol.readthedocs.io). For now it provides basic documentation on 
 HandshakeState, CipherState and SymmetricState. Refer to the rest of the README below for more information.
 
 ## Installation and prerequisites
-For now, only Python 3.5+ is supported.
-The author provides support for Linux systems only. Although the CI systems perform testing on **Windows and OS X**, consider their support even **more experimental** than the whole package, though OS X usage should not differ from Linux.
+For now, only Python 3.5+ is supported. Author provides support for Linux systems only.
 
 Install via pip:
 ```
@@ -138,12 +132,12 @@ pytest
 
 ### Todo-list for the project:
 
-- [ ] add non-default crypto algorithms support, as requested
+- [x] add non-default crypto algorithms support, as requested
 - [ ] fallback patterns support
 - [ ] scripts for keypair generation (+ console entry points)
 - [ ] "echo" (noise-c like) example
 - [ ] extensive logging
-- [ ] move away from custom ed448 implementation
+- [x] move away from custom ed448 implementation
 - [ ] implement countermeasures for side-channel attacks
 - [ ] **get peer review of the code**
 
