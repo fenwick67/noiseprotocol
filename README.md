@@ -7,7 +7,7 @@ noiseprotocol
 This repository contains source code of **noiseprotocol** - a Python 3 implementation of [Noise Protocol Framework](http://www.noiseprotocol.org/).
 Compatible with revisions 32 and 33.
 
-Master branch contains latest version released. Trunk branch is an active development branch.
+Master branch contains latest version released. Trunk branch is an active development branch (CI system is in works currently. Moving to CircleCI)
 
 ## Documentation
 Available on [Read the Docs](https://noiseprotocol.readthedocs.io). For now it provides basic documentation on 
